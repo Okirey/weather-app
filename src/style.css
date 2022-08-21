@@ -3,7 +3,7 @@ body{
 }
 
 h1 {
-color: rgb(136, 136, 136);
+color: rgb(92, 92, 86);
 font-size: 28px;
 font-weight: 600;
 line-height: 28px;
@@ -21,6 +21,16 @@ li{
     margin: 0;
     padding: 0;
 }
+.location-temperature img{
+    margin-right: 10px;
+    height: 64px;
+    width: 64px;
+}
+.location-temperature strong{
+    color: rgb(92, 92, 86);
+    font-size: 48px;
+    font-weight: 400;
+}
 
 .weather-app {
     max-width: 600px;
@@ -28,4 +38,13 @@ li{
     padding: 20px;
     border: 1px solid rgb(231, 231, 231);
     border-radius: 10px;
+}
+.units {
+    position: relative;
+    font-size: 16px;
+    color: rgb(136, 136, 136);
+    margin-left: 5px;
+}
+a{
+    text-decoration: none;
 }
