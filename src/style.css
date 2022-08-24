@@ -54,3 +54,7 @@ a {
     background-color: rgb(126, 126, 121);
     border-color: darkgrey;
 }
+.location-temperature .active{
+    color: rgb(136, 136, 136);
+    cursor: default;
+}

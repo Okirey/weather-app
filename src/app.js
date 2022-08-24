@@ -57,13 +57,17 @@
 
  function showFahrTemperature (event) {
  event.preventDefault();
- let fahrTemperature = (celsiusTemperature * 9)/5 + 32; 
- let temperatureElement = document.querySelector("#temperature");
+ let fahrTemperature = (celsiusTemperature * 9)/5 + 32;
+ celsiusLink.classList.remove("active");
+ fahrenheitLink.classList.add("active");
+ let temperatureElement = document.querySelector("#temperature"); 
  temperatureElement.innerHTML = Math.round(fahrTemperature);
  }
 
  function showCelsiusTemperature(event){
  event.preventDefault();
+ celsiusLink.classList.add("active");
+ fahrenheitLink.classList.remove("active")
  let temperatureElement = document.querySelector("#temperature");
  temperatureElement.innerHTML = celsiusTemperature;
  }
