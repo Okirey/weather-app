@@ -15,10 +15,11 @@
 
  }
  
- 
  function showTemperature(response) {
+ celsiusTemperature = Math.round(response.data.main.temp); 
+
  let temperatureElement = document.querySelector("#temperature");
- temperatureElement.innerHTML = Math.round(response.data.main.temp);
+ temperatureElement.innerHTML = celsiusTemperature;
 
  let cityElement = document.querySelector("#city");
  cityElement.innerHTML = response.data.name;
@@ -39,21 +40,44 @@
  let iconElement = document.querySelector("#icon");
  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${changingIcon}@2x.png`);
  iconElement.setAttribute ("alt", response.data.weather[0].main);
+
+
   }
-function search(city){
-let apiKey = "dcbbd6fc3a17f5e8c90f576135d1831c";
- let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
- 
+ function search(city){
+ let apiKey = "dcbbd6fc3a17f5e8c90f576135d1831c";
+ let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`; 
  axios.get(apiUrl).then(showTemperature);
 }
+
   function processingSubmit (event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
  } 
- 
- search("Zaporizhzhia")
 
+ function showFahrTemperature (event) {
+ event.preventDefault();
+ let fahrTemperature = (celsiusTemperature * 9)/5 + 32; 
+ let temperatureElement = document.querySelector("#temperature");
+ temperatureElement.innerHTML = Math.round(fahrTemperature);
+ }
+
+ function showCelsiusTemperature(event){
+ event.preventDefault();
+ let temperatureElement = document.querySelector("#temperature");
+ temperatureElement.innerHTML = celsiusTemperature;
+ }
+ 
+
+ let celsiusTemperature = null;
 
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", processingSubmit);
+
+ let fahrenheitLink = document.querySelector("#fahrenheit-link");
+ fahrenheitLink.addEventListener("click", showFahrTemperature);
+
+ let celsiusLink = document.querySelector("#celsius-link");
+ celsiusLink.addEventListener("click", showCelsiusTemperature);
+
+search("Tokyo")
