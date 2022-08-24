@@ -38,13 +38,22 @@
  let changingIcon = response.data.weather[0].icon;
  let iconElement = document.querySelector("#icon");
  iconElement.setAttribute("src", `https://openweathermap.org/img/wn/${changingIcon}@2x.png`);
-
  iconElement.setAttribute ("alt", response.data.weather[0].main);
- }
- 
- 
- let apiKey = "dcbbd6fc3a17f5e8c90f576135d1831c";
- let city = "Malaga";
+  }
+function search(city){
+let apiKey = "dcbbd6fc3a17f5e8c90f576135d1831c";
  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
-
+ 
  axios.get(apiUrl).then(showTemperature);
+}
+  function processingSubmit (event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+ } 
+ 
+ search("Zaporizhzhia")
+
+
+ let form = document.querySelector("#search-form");
+ form.addEventListener("submit", processingSubmit);

@@ -50,3 +50,7 @@ li{
 a {
     text-decoration: none;
 }
+.btn {
+    background-color: rgb(126, 126, 121);
+    border-color: darkgrey;
+}
