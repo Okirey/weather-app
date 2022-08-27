@@ -58,3 +58,21 @@ a {
     color: rgb(136, 136, 136);
     cursor: default;
 }
+.weather-forecast{
+    margin-top: 20px;
+    text-align: center;
+   }
+   .weather-forecast-date{
+    font-size: 16px;
+    font-weight: bold;
+    color:rgb(92, 92, 86);
+   }
+   .weather-forecast-temperatures{
+    font-size: 13px;
+    margin-top: 8px;
+    color: rgb(128, 128, 124);
+    font-weight: bold;
+   }
+.weather-forecast-temp-max{
+    color: rgb(41, 41, 40);
+}
