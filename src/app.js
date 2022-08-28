@@ -14,6 +14,23 @@
     return `${day} ${hours}:${minutes}`;
 
  }
+
+ function displayForecast(){
+   let forecastElement = document.querySelector("#forecast");
+   forecastElement.innerHTML = 
+   `<div class="row">
+    <div class="col-2">
+      <div class="weather-forecast-date">
+      Thu
+      </div>
+      <img src="src/img/sunny.png" alt="" width="40px">
+     <div class="weather-forecast-temperatures">
+     <span class="weather-forecast-temp-max">18°</span>
+     <span class="weather-forecast-temp-min">12°</span>      
+    </div>
+    </div>
+  </div>`;
+ }
  
  function showTemperature(response) {
  celsiusTemperature = Math.round(response.data.main.temp); 
@@ -74,6 +91,7 @@
  
 
  let celsiusTemperature = null;
+ displayForecast();
 
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", processingSubmit);
