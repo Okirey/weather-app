@@ -94,33 +94,7 @@
   search(cityInputElement.value);
  } 
 
- function showFahrTemperature (event) {
- event.preventDefault();
- let fahrTemperature = (celsiusTemperature * 9)/5 + 32;
- celsiusLink.classList.remove("active");
- fahrenheitLink.classList.add("active");
- let temperatureElement = document.querySelector("#temperature"); 
- temperatureElement.innerHTML = Math.round(fahrTemperature);
- }
-
- function showCelsiusTemperature(event){
- event.preventDefault();
- celsiusLink.classList.add("active");
- fahrenheitLink.classList.remove("active")
- let temperatureElement = document.querySelector("#temperature");
- temperatureElement.innerHTML = celsiusTemperature;
- }
- 
-
- let celsiusTemperature = null;
-
  let form = document.querySelector("#search-form");
  form.addEventListener("submit", processingSubmit);
-
- let fahrenheitLink = document.querySelector("#fahrenheit-link");
- fahrenheitLink.addEventListener("click", showFahrTemperature);
-
- let celsiusLink = document.querySelector("#celsius-link");
- celsiusLink.addEventListener("click", showCelsiusTemperature);
 
 search("Tokyo")
